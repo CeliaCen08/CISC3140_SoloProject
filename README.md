@@ -1,6 +1,6 @@
 # CISC3140_SoloProject
 
-# Pokémon Pack Opener 🎴
+#꒰ᐢ. .ᐢ꒱₊˚⊹ Pokémon Pack Opener ꒰ᐢ. .ᐢ꒱₊˚⊹
 
 A browser-based Pokémon pack opening simulator built with Vite + React.
 
