@@ -3,22 +3,56 @@
 #꒰ᐢ. .ᐢ꒱₊˚⊹ Pokémon Pack Opener ꒰ᐢ. .ᐢ꒱₊˚⊹
 
 A browser-based Pokémon pack opening simulator built with Vite + React.
+Browse real sets, open packs, and build your collection — all in the browser.
 
-## Setup
+🔗 **Live Demo:**
 
+## Features
+ 
+- 🗂 Browse every Pokémon TCG set via the PokéTCG API
+- 🎴 Open booster packs with an authentic 10-card structure (Commons, Uncommons, Energy, Reverse Holo, and a Hit slot)
+- ✨ Weighted rarity system — Double Rare, Illustration Rare, Ultra Rare, Special IR, and Hyper Rare
+- 🖱 Click-to-reveal cards one by one
+- 🔍 Click any revealed card to inspect it in a modal with full card details
+- 💾 Collection persists across sessions via localStorage
+- 🌸 Pastel-themed UI with smooth Framer Motion animations
+
+## Tech Stack
+ 
+- [Vite](https://vitejs.dev) + [React](https://react.dev)
+- [Framer Motion](https://www.framer.com/motion/) — card animations
+- [PokéTCG API](https://pokemontcg.io) — real card data and images
+- Deployed on [Vercel](https://vercel.com)
+---
+
+
+## Getting Started
+ 
+### 1. Clone the repo
 ```bash
-npm create vite@latest pokemon-pack-opener -- --template react
-cd pokemon-pack-opener
-npm install
-npm install framer-motion
+git clone https://github.com/CeliaCen08/CISC3140_SoloProject.git
+cd Pokemon-Pack-Simulator
 ```
-
-Then replace the `src/` folder with the files provided.
-
+ 
+### 2. Install dependencies
+```bash
+npm install
+```
+ 
+### 3. Set up your API key
+Create a `.env` file in the project root:
+```
+VITE_POKETCG_API_KEY=your-api-key-here
+```
+Get a free key at [pokemontcg.io](https://pokemontcg.io).
+ 
+### 4. Run the dev server
 ```bash
 npm run dev
 ```
-
+ 
+Open `http://localhost:5173` in your browser.
+ 
 ---
 
 ## Project Structure
@@ -53,8 +87,13 @@ pokemon-pack-opener/
 
 ## Next Steps / Ideas
 
-- [ ] Fetch live card data from the PokéTCG API (https://pokemontcg.io)
-- [ ] Add multiple pack types (Base Set, Jungle, Fossil...)
 - [ ] Sound effects on card reveal
 - [ ] Shiny/holo foil CSS effect on rare cards
 - [ ] Trade duplicates feature
+
+
+## Course Info
+ 
+**Course:** CISC 3140 — Design & Implementation of Large-Scale Web Applications  
+**Author:** Celia Cenhua  
+**Type:** Solo Project
