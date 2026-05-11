@@ -10,21 +10,21 @@ export function Collection({ cards, onClear }) {
       </section>
     );
   }
-
+  const safeCards = cards.filter(Boolean);
   // Count duplicates
-  const counts = cards.reduce((acc, c) => {
+  const counts = safeCards.reduce((acc, c) => {
     acc[c.id] = (acc[c.id] ?? 0) + 1;
     return acc;
   }, {});
 
   // Deduplicated list for display
-  const unique = cards.filter((c, i, arr) => arr.findIndex(x => x.id === c.id) === i);
+  const unique = safeCards.filter((c, i, arr) => arr.findIndex(x => x.id === c.id) === i);
 
   return (
     <section className="collection">
       <div className="collection__header">
         <h2 className="collection__title">
-          My Collection <span className="collection__count">({cards.length} cards)</span>
+          My Collection <span className="collection__count">({safeCards.length} cards)</span>
         </h2>
         <button className="clear-btn" onClick={onClear}>Clear</button>
       </div>

@@ -1,6 +1,7 @@
 // src/components/Card.jsx
 import { motion } from "framer-motion";
 import { RARITY_CONFIG, CLASSIC_RARITY_CONFIG } from "../data/cards";
+import cardBack from "../assets/cardback.jpg";
 
 const ALL_RARITY = { ...RARITY_CONFIG, ...CLASSIC_RARITY_CONFIG };
 
@@ -15,20 +16,36 @@ function getCardClass(rarity) {
   return "";
 }
 
-export function Card({ card, revealDelay = 0 }) {
+export function Card({ card, revealDelay = 0, revealed = true, onClick }) {
   const { color, label } = getRarityMeta(card.rarity);
   const image = card.images?.small ?? card.images?.large;
-  const isShiny = ["Rare Holo","Double Rare","Illustration Rare","Ultra Rare","Special Illustration Rare","Hyper Rare"].includes(card.rarity);
+  const isShiny = ["Rare Holo","Double Rare","Illustration Rare","Ultra Rare",
+                   "Special Illustration Rare","Hyper Rare"].includes(card.rarity);
+
+  if (!revealed) {
+    return (
+      <motion.div
+        className="card card--facedown"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: revealDelay, duration: 0.3 }}
+        onClick={onClick}
+      >
+        <img src={cardBack} alt="Card back" className="card__back-img" />
+      </motion.div>
+    );
+  }
 
   return (
     <motion.div
       initial={{ rotateY: 180, opacity: 0, y: 30 }}
       animate={{ rotateY: 0,   opacity: 1, y: 0  }}
-      transition={{ delay: revealDelay, duration: 0.5, type: "spring", stiffness: 120 }}
+      transition={{ duration: 0.5, type: "spring", stiffness: 120 }}
       style={{ perspective: 1000 }}
+      onClick={onClick}
     >
       <div
-        className={`card ${getCardClass(card.rarity)}`}
+        className={`card ${getCardClass(card.rarity)} ${onClick ? "card--clickable" : ""}`}
         style={{ "--rarity-color": color }}
       >
         <div className="card__inner">

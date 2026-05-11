@@ -31,7 +31,7 @@ export function usePacks(setId) {
     if (isOpening || allCards.length === 0) return;
     setIsOpening(true);
 
-    const newCards = openPack(allCards, 9);
+    const newCards = openPack(allCards);
     setCurrentCards(newCards);
 
     setCollection(prev => {

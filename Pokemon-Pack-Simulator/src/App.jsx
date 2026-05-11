@@ -5,6 +5,7 @@ import { Collection }  from "./components/Collection";
 import { SetPicker }   from "./components/SetPicker";
 import { usePacks }    from "./hooks/usePacks";
 import "./App.css";
+import logo from "./assets/love_ball.PNG";
 
 export default function App() {
   const [selectedSet, setSelectedSet] = useState(null); // null = set picker view
@@ -22,7 +23,8 @@ export default function App() {
     <div className="app">
       <header className="app-header">
         <h1 className="app-title" onClick={() => setView("sets")} style={{ cursor: "pointer" }}>
-          <span className="app-title__ball">⬤</span> Poképack
+        <img src={logo} alt="Pokepack logo" className="app-title__logo" />
+        Poképack
         </h1>
         <nav className="app-nav">
           <button className={`nav-btn ${view === "sets"     ? "nav-btn--active" : ""}`} onClick={() => setView("sets")}>Sets</button>
