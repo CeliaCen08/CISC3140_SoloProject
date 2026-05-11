@@ -52,6 +52,9 @@ export default function App() {
           <Collection cards={collection} onClear={clearCollection} />
         )}
       </main>
+        <footer className="app-footer">
+          <p>Made with ♡ by Celia</p>
+        </footer>
     </div>
   );
 }

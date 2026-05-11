@@ -318,3 +318,12 @@ body {
 }
 .modal-meta__item { font-size: 0.85rem; color: var(--text-muted); }
 .modal-meta__item strong { color: var(--text); }
+
+.app-footer {
+  text-align: center;
+  padding: 1.5rem;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  border-top: 1.5px solid var(--border);
+  background: var(--surface);
+}
