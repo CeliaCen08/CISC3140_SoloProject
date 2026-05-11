@@ -95,5 +95,5 @@ pokemon-pack-opener/
 ## Course Info
  
 **Course:** CISC 3140 — Design & Implementation of Large-Scale Web Applications  
-**Author:** Celia Cenhua  
+**Author:** Celia Cen 
 **Type:** Solo Project
